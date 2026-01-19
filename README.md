@@ -67,19 +67,28 @@ graph TD
 
 ---
 
-## 🔄 Data Flow
+## 🔄 Data Flow (Sonar V3 Hybrid Model)
 
-1.  **User Action**: Artist uploads a track.
-2.  **Frontend Processing**:
-    *   Audio/Image upload to **IPFS** via API route.
-    *   Metadata JSON generation & pinning.
-3.  **Blockchain Execution**:
-    *   User signs transaction (via Privy embedded wallet).
-    *   Smart Contract mints NFT on **Polygon Amoy**.
-    *   Payment Splitter contract deployed if collaborators exist.
-4.  **Database Sync**:
-    *   Track metadata and visibility (Public/Fan Club Tier) saved to **PostgreSQL**.
-    *   Social feed updated for followers.
+1.  **Upload (Multi-Track)**:
+    *   Artist drags & drops Album/EP audio files.
+    *   Frontend uploads to **IPFS** (Pinata) and generates metadata.
+    *   Backend (`/api/music/upload`) creates relational records in **SQLite** (Collection + Tracks).
+2.  **Minting (Gasless)**:
+    *   Artist clicks "Mint".
+    *   Backend (`/api/music/mint`) uses Admin Private Key to execute `mintTo` on **Polygon Amoy**.
+    *   Zero cost to the artist; completely seamless UX.
+3.  **Playback & Streaming**:
+    *   Frontend fetches tracks from **Database** (Fast, Rich Metadata) via `/api/music/feed` or `/api/users`.
+    *   User plays a song -> `SongCard` uses cached IPFS Gateway URL.
+    *   After 30s, `GlobalPlayer` triggers `/api/music/stream` to increment counters in DB.
+
+---
+
+## 🌟 Sonar V3 Features
+*   **Multi-Track Releases**: Support for Singles, EPs (2-6 tracks), and Albums (7+).
+*   **Stream Analytics**: Real-time play counting and "Top Tracks" sorting.
+*   **Hybrid Discovery**: Search and Discover feeds powered by Database for instant results, backed by on-chain provenance.
+*   **Gasless Operations**: Server-side transaction handling for smoother onboarding.
 
 ---
 
