@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-**Sonar Social** is a next-generation "Web2.5" social music platform that bridges the gap between streaming, social media, and blockchain ownership, empowering artists with direct-to-fan monetization via Fan Clubs and on-chain music assets.</p>
+Sonar Social is a next-generation "Web2.5" social music platform that bridges the gap between streaming, social media, and blockchain ownership, empowering artists with direct-to-fan monetization via Fan Clubs and on-chain music assets.</p>
 
 ---
 
