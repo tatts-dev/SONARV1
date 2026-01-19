@@ -3,7 +3,8 @@
   <img src="assets/sonar-logo.png" alt="Sonar Social Logo" width="420" />
 </p>
 
-**Sonar Social** is a next-generation "Web2.5" social music platform that bridges the gap between streaming, social media, and blockchain ownership. It features a premium **Glassmorphism** UI ("Deep Sea" & "Real Glass" themes) and empowers artists with direct-to-fan monetization via Fan Clubs and on-chain music assets.
+<p align="center">
+**Sonar Social** is a next-generation "Web2.5" social music platform that bridges the gap between streaming, social media, and blockchain ownership, empowering artists with direct-to-fan monetization via Fan Clubs and on-chain music assets.</p>
 
 ---
 
