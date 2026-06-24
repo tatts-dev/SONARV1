@@ -10,7 +10,7 @@ Sonar Social is a next-generation "Web2.5" social music platform that bridges th
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 - [System Architecture](#system-architecture)
 - [Technical Stack](#technical-stack)
 - [Data Flow](#data-flow)
@@ -23,14 +23,14 @@ Sonar Social is a next-generation "Web2.5" social music platform that bridges th
 
 ---
 
-## 🏗 System Architecture
+## System Architecture
 
 Sonar Social operates as a hybrid application:
 1.  **Social Graph & User Data**: Stored off-chain in a relational database (PostgreSQL) for speed and complex queries (feeds, comments, clubs).
 2.  **Music Assets & Ownership**: Stored on-chain (Polygon Amoy) and decentralized storage (IPFS) to ensure artist ownership and provenance.
 3.  **Authentication**: Handled via **Privy**, enabling "invisible" wallet creation for Web2 users while supporting external wallets for Web3 natives.
 
-### High-Level Diagram
+### HLD
 ```mermaid
 graph TD
     User[User / Client] -->|HTTPS| NextJS[Next.js App Server]
@@ -51,7 +51,7 @@ graph TD
 
 ---
 
-## 🛠 Technical Stack
+## The stack we used?
 
 ### **Frontend & Framework**
 -   **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
@@ -73,7 +73,7 @@ graph TD
 
 ---
 
-## 🔄 Data Flow (Sonar V3 Hybrid Model)
+## Data Flow 
 
 1.  **Upload (Multi-Track)**:
     *   Artist drags & drops Album/EP audio files.
@@ -90,7 +90,7 @@ graph TD
 
 ---
 
-## 🌟 Sonar V3 Features
+##  Sonar V3 Features
 *   **Multi-Track Releases**: Support for Singles, EPs (2-6 tracks), and Albums (7+).
 *   **Stream Analytics**: Real-time play counting and "Top Tracks" sorting.
 *   **Hybrid Discovery**: Search and Discover feeds powered by Database for instant results, backed by on-chain provenance.
@@ -98,13 +98,13 @@ graph TD
 
 ---
 
-## 🍰 Layers Breakdown
+##  Layers breakdown
 
-### 1. Execution Layer (Runtime)
+### 1. Execution Layer 
 *   **Environment**: Node.js (Server actions/API), Browser (Client components).
 *   **Chain**: EVM-compatible Polygon Amoy Testnet.
 
-### 2. Application Layer (Logic)
+### 2. Application Layer 
 *   **Routing**: Next.js App Router (`src/app`).
     *   `(portal)`: Authenticated main app views.
 *   **Business Logic**:
@@ -113,7 +113,7 @@ graph TD
     *   `src/components/web3`: Minting, Wallet interactions.
 *   **Data Models**: See `prisma/schema.prisma` for strict typing of Users, Posts, Clubs, and Tiers.
 
-### 3. Presentation Layer (UI/UX)
+### 3. Presentation Layer 
 *   **Design System**: **Glassmorphism**.
     *   **Night Mode (Default)**: Deep Purple/Black backgrounds, neon accents.
     *   **Light Mode**: "Real Glass" aesthetic with frosty transparency and light backgrounds.
@@ -124,9 +124,9 @@ graph TD
 
 ---
 
-## 🐛 Known Issues & Roadmap
+##  Current Issues we are working around !
 
-### ⚠️ Current Limitations / Bug Risks
+###  Current Limitations / Bugs
 1.  **Legacy Dependencies**: The codebase is migrating from **Ant Design** to **Shadcn/Tailwind**.
     *   *Risk*: Some deep-nested components (like complex forms or legacy modals) might still depend on Antd styles, causing minor visual inconsistencies or "flashing" styles.
     *   *Fix*: ongoing refactor to replace all `antd` imports.
@@ -138,7 +138,7 @@ graph TD
 
 ---
 
-## 🚀 Getting Started
+## Want to get started?
 
 1.  **Install Dependencies**:
     ```bash
